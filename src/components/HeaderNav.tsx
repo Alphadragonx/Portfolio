@@ -22,8 +22,8 @@ interface HeaderNavProps {
   onOpenResume: () => void;
   soundEnabled: boolean;
   onToggleSound: () => void;
-  themeAccent: "cyan" | "indigo" | "emerald";
-  onSelectTheme: (theme: "cyan" | "indigo" | "emerald") => void;
+  themeMode: "dark" | "light" | "cyberpunk";
+  onSelectTheme: (theme: "dark" | "light" | "cyberpunk") => void;
 }
 
 export const HeaderNav: React.FC<HeaderNavProps> = ({
@@ -31,7 +31,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
   onOpenResume,
   soundEnabled,
   onToggleSound,
-  themeAccent,
+  themeMode,
   onSelectTheme,
 }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -66,12 +66,6 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-  };
-
-  const accentColorClasses = {
-    cyan: "text-cyan-400 border-cyan-500/30 bg-cyan-500/10 shadow-cyan-500/20",
-    indigo: "text-indigo-400 border-indigo-500/30 bg-indigo-500/10 shadow-indigo-500/20",
-    emerald: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10 shadow-emerald-500/20",
   };
 
   return (
@@ -166,19 +160,43 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           {/* Theme Accent Picker */}
           <div className="hidden sm:flex items-center p-1 bg-slate-900/60 border border-slate-800 rounded-xl gap-1">
             <button
-              onClick={() => { onSelectTheme("cyan"); soundManager.playClick(); }}
-              className={`w-3.5 h-3.5 rounded-full bg-cyan-400 transition-transform ${themeAccent === "cyan" ? "scale-125 ring-2 ring-cyan-300/60" : "opacity-60 hover:opacity-100"}`}
-              title="Cyan Accent"
+              onClick={() => {
+                onSelectTheme("dark");
+                soundManager.playClick();
+              }}
+              onMouseEnter={() => soundManager.playHover()}
+              className={`w-3.5 h-3.5 rounded-full bg-cyan-400 transition-all ${
+                themeMode === "dark"
+                  ? "ring-2 ring-cyan-300 ring-offset-2 ring-offset-slate-950 scale-125"
+                  : "opacity-60 hover:opacity-100"
+              }`}
+              title="Dark Theme"
             />
             <button
-              onClick={() => { onSelectTheme("indigo"); soundManager.playClick(); }}
-              className={`w-3.5 h-3.5 rounded-full bg-indigo-400 transition-transform ${themeAccent === "indigo" ? "scale-125 ring-2 ring-indigo-300/60" : "opacity-60 hover:opacity-100"}`}
-              title="Indigo Accent"
+              onClick={() => {
+                onSelectTheme("light");
+                soundManager.playClick();
+              }}
+              onMouseEnter={() => soundManager.playHover()}
+              className={`w-3.5 h-3.5 rounded-full bg-indigo-400 transition-all ${
+                themeMode === "light"
+                  ? "ring-2 ring-indigo-300 ring-offset-2 ring-offset-slate-950 scale-125"
+                  : "opacity-60 hover:opacity-100"
+              }`}
+              title="Light Theme"
             />
             <button
-              onClick={() => { onSelectTheme("emerald"); soundManager.playClick(); }}
-              className={`w-3.5 h-3.5 rounded-full bg-emerald-400 transition-transform ${themeAccent === "emerald" ? "scale-125 ring-2 ring-emerald-300/60" : "opacity-60 hover:opacity-100"}`}
-              title="Emerald Accent"
+              onClick={() => {
+                onSelectTheme("cyberpunk");
+                soundManager.playClick();
+              }}
+              onMouseEnter={() => soundManager.playHover()}
+              className={`w-3.5 h-3.5 rounded-full bg-emerald-400 transition-all ${
+                themeMode === "cyberpunk"
+                  ? "ring-2 ring-emerald-300 ring-offset-2 ring-offset-slate-950 scale-125"
+                  : "opacity-60 hover:opacity-100"
+              }`}
+              title="Sandy Cyberpunk Theme"
             />
           </div>
 

@@ -19,8 +19,12 @@ import { soundManager } from "./utils/soundEffects";
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>("hero");
   const [resumeModalOpen, setResumeModalOpen] = useState<boolean>(false);
-  const [soundEnabled, setSoundEnabled] = useState<boolean>(false);
-  const [themeAccent, setThemeAccent] = useState<"cyan" | "indigo" | "emerald">("cyan");
+  const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
+  const [themeMode, setThemeMode] = useState<"dark" | "light" | "cyberpunk">("dark");
+
+  useEffect(() => {
+    soundManager.setEnabled(true);
+  }, []);
 
   const handleToggleSound = () => {
     const next = !soundEnabled;
@@ -57,15 +61,15 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950 accent-${themeAccent}`}>
+    <div className={`min-h-screen theme-${themeMode} bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950 transition-colors duration-300`}>
       {/* Fixed Navigation Bar */}
       <HeaderNav
         activeSection={activeSection}
         onOpenResume={() => setResumeModalOpen(true)}
         soundEnabled={soundEnabled}
         onToggleSound={handleToggleSound}
-        themeAccent={themeAccent}
-        onSelectTheme={setThemeAccent}
+        themeMode={themeMode}
+        onSelectTheme={setThemeMode}
       />
 
       {/* Hero Section */}

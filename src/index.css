@@ -1,1 +1,145 @@
 @import "tailwindcss";
+
+/* Theme Styles */
+/* Light Mode Theme Overrides */
+.theme-light {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.theme-light header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+.theme-light section {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.theme-light footer {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+.theme-light .bg-slate-950,
+.theme-light .bg-slate-900\/90,
+.theme-light .bg-slate-900\/80,
+.theme-light .bg-slate-900\/60,
+.theme-light .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.theme-light .bg-slate-950\/80,
+.theme-light .bg-slate-950\/90 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light .text-white,
+.theme-light .text-slate-100,
+.theme-light .text-slate-200 {
+  color: #0f172a !important;
+}
+
+.theme-light .text-slate-300,
+.theme-light .text-slate-400 {
+  color: #334155 !important;
+}
+
+.theme-light .text-slate-500,
+.theme-light .text-slate-600 {
+  color: #64748b !important;
+}
+
+.theme-light .border-slate-800,
+.theme-light .border-slate-800\/80,
+.theme-light .border-slate-800\/60,
+.theme-light .border-slate-900 {
+  border-color: #e2e8f0 !important;
+}
+
+.theme-light input,
+.theme-light textarea {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Sandy Cyberpunk Mode Theme Overrides */
+.theme-cyberpunk {
+  background-color: #14100b !important;
+  color: #fce8cc !important;
+}
+
+.theme-cyberpunk header {
+  background-color: rgba(24, 19, 13, 0.9) !important;
+  border-color: rgba(74, 55, 33, 0.9) !important;
+}
+
+.theme-cyberpunk section {
+  background-color: #14100b !important;
+  border-color: #3d2e1c !important;
+  color: #fce8cc !important;
+}
+
+.theme-cyberpunk footer {
+  background-color: #18130d !important;
+  border-color: #3d2e1c !important;
+  color: #c2a278 !important;
+}
+
+.theme-cyberpunk .bg-slate-950,
+.theme-cyberpunk .bg-slate-900\/90,
+.theme-cyberpunk .bg-slate-900\/80,
+.theme-cyberpunk .bg-slate-900\/60,
+.theme-cyberpunk .bg-slate-900 {
+  background-color: #1c1610 !important;
+  border-color: #4a3721 !important;
+  color: #fce8cc !important;
+}
+
+.theme-cyberpunk .bg-slate-950\/80,
+.theme-cyberpunk .bg-slate-950\/90 {
+  background-color: #261d14 !important;
+  border-color: #594228 !important;
+}
+
+.theme-cyberpunk .text-white,
+.theme-cyberpunk .text-slate-100,
+.theme-cyberpunk .text-slate-200 {
+  color: #fef3c7 !important;
+}
+
+.theme-cyberpunk .text-slate-300,
+.theme-cyberpunk .text-slate-400 {
+  color: #f59e0b !important;
+}
+
+.theme-cyberpunk .text-slate-500,
+.theme-cyberpunk .text-slate-600 {
+  color: #d97706 !important;
+}
+
+.theme-cyberpunk .border-slate-800,
+.theme-cyberpunk .border-slate-800\/80,
+.theme-cyberpunk .border-slate-800\/60,
+.theme-cyberpunk .border-slate-900 {
+  border-color: #4a3721 !important;
+}
+
+.theme-cyberpunk input,
+.theme-cyberpunk textarea {
+  background-color: #14100b !important;
+  border-color: #594228 !important;
+  color: #fef3c7 !important;
+}
+
+/* Custom transitions */
+div, section, header, footer, button, input, textarea {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
